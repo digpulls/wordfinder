@@ -1,6 +1,6 @@
-version: 2 
-jobs: 
-  build: 
+version: 2
+jobs:
+  build:
     working_directory: ~/wordfinder
 
     docker: # run the steps with Docker
@@ -22,9 +22,16 @@ jobs:
 
       - run: mvn package # run the actual tests
 
-      - store_test_results: # uploads the test metadata from the `target/surefire-reports` directory so that it can show up in the CircleCI dashboard. 
-          # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
-          path: target/surefire-reports
+      - run: # uploads the test metadata from the `target/surefire-reports` directory so that it can show up in the CircleCI dashboard.
+          name: Save test results
+          command: |
+            mkdir -p ~/junit/
+            find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/junit/ \;
+          when: always
+      - store_test_results:
+          path: ~/junit
+      - store_artifacts:
+          path: ~/junit
 
       - store_artifacts: #
           # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
