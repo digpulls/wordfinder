@@ -9,7 +9,7 @@ public class Result {
         return longestWord;
     }
 
-    public Result setLongestWord(String longestWord) {
+    Result setLongestWord(String longestWord) {
         this.longestWord = longestWord;
         return this;
     }
@@ -18,7 +18,7 @@ public class Result {
         return length;
     }
 
-    public Result setLength(Integer length) {
+    Result setLength(Integer length) {
         this.length = length;
         return this;
     }

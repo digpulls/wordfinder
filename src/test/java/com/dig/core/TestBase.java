@@ -6,7 +6,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ExtendWith(CallBack.class)
-public class BaseTest {
+
+/* Base test class to initialize tests with Logger dynamically */
+public class TestBase {
 
     private Logger logger;
 

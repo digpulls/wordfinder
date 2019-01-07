@@ -1,7 +1,7 @@
 package com.dig.tests;
 
 
-import com.dig.core.BaseTest;
+import com.dig.core.TestBase;
 import com.dig.core.JsonSource;
 import com.dig.core.LongestWordFinder;
 import com.dig.core.Result;
@@ -13,7 +13,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class WordFinderTests extends BaseTest {
+public class WordFinderTest extends TestBase {
 
     /* Note: Ideally test data should be in parsed from external JSON files. And @JsonSource should take the resource path instead
      * But, for the sake of the test, I am including JSON content in the test class */
@@ -44,7 +44,6 @@ public class WordFinderTests extends BaseTest {
     void canFindLongestWord(WordFinderTestData data) {
         getLogger().info("Executing test scenario: {}", data.getTestScenario());
         Result result = new LongestWordFinder().fromSentence(data.getSentence()).findLongestWordAndLength();
-
         assertEquals(data.getExpectedWord(), result.getLongestWord());
         assertEquals(Integer.valueOf(data.getExpectedWord().length()), result.getLength());
     }

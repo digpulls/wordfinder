@@ -9,6 +9,7 @@ import org.junit.jupiter.params.support.AnnotationConsumer;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
+/* Junit5 extension to use JSON as test data source */
 public class JsonArgumentsProvider implements ArgumentsProvider, AnnotationConsumer<JsonSource> {
 
     private String[] values;

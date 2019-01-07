@@ -1,7 +1,6 @@
 package com.dig.tests.data;
 
 public class WordFinderTestData {
-
     private String sentence;
     private String expectedWord;
     private String testScenario;

@@ -9,9 +9,10 @@ import java.util.Objects;
 
 /**
  * Assumptions:
- * <p>
  * 1. Empty and Null input will be rejected.
- * 2. "     " white spaces are rejected.
+ * 2. "     " white spaces are rejected and are treated as empty string.
+ * 3. In case of multiple long words with the same length, the first one is picked as return object can be only 1.
+ *
  */
 public class LongestWordFinder {
 
@@ -25,6 +26,7 @@ public class LongestWordFinder {
 
     /**
      * Finds the longest word in the sentence
+     * @return An instance of Result class with longest word and it's length
      */
     public Result findLongestWordAndLength() {
         Result result = null;
