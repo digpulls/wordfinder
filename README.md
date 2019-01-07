@@ -8,11 +8,11 @@ Takes a sentence as input and returns an instance of [Result](src/main/java/com/
 #### Usage:
 
 
-    `Result result = new LongestWordFinder()
+    Result result = new LongestWordFinder()
                         .fromSentence("The cow jumped over the moon.")
                         .findLongestWordAndLength()
     System.out.println(result.getLongestWord());
-    System.out.println(result.getLength());`
+    System.out.println(result.getLength());
     
     
 #### Output:
@@ -25,4 +25,4 @@ To run tests, import as a maven project and run:
 
 `# mvn test`
 
-#CirecleCI build: [master](https://circleci.com/gh/digpulls/wordfinder/tree/master)
+# CircleCI build: [master](https://circleci.com/gh/digpulls/wordfinder/tree/master)
