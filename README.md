@@ -24,3 +24,5 @@ Takes a sentence as input and returns an instance of [Result](src/main/java/com/
 To run tests, import as a maven project and run:
 
 `# mvn test`
+
+#CirecleCI build: [master](https://circleci.com/gh/digpulls/wordfinder/tree/master)
